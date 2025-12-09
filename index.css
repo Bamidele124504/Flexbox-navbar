@@ -14,14 +14,13 @@ body {
     align-items: center;
     background-color: #333;
     padding: 1rem 2.5rem;
-    margin: 1.5rem; 
+    margin: 1.5rem;
     border-radius: 0.5rem;
 }
 
-.logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo img {
+    width: 3rem;
+    height: auto;
 }
 
 .nav-links {
@@ -33,7 +32,7 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 1.125rem; 
+    font-size: 1.125rem;
 }
 
 .nav-links a:hover {
@@ -46,10 +45,92 @@ body {
     border-radius: 0.3rem;
     border: none;
     outline: none;
-    width: 50rem;
+    width: 20rem;
 }
 
-.logo img {
-    width: 3rem; 
-    height: auto;  
+.product-section {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    grid-template-columns: repeat(3, 1fr); /* Desktop default */
+}
+
+/* Product card styling */
+.product-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.product-card h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.price {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Hover effect */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+/*
+   Mobile view (below 768px)
+   Stack all items vertically*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem; /* adds space between items */
+    }
+
+    .nav-links {
+        flex-direction: column; /* stack links vertically */
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .search {
+        width: 100%; /* full width on mobile */
+    }
+     .logo img {
+        width: 2.5rem;   /* smaller on mobile */
+        margin-bottom: 0.5rem;
+    }
+    .product-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*  Tablet (768px - 1024px): 2 cards per row */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .product-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop (> 1024px): 3 cards per row */
+@media (min-width: 1024px) {
+    .product-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
