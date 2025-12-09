@@ -12,16 +12,67 @@
         <div class="logo">
             <img src="logo.png" alt="Logo">
         </div>
-
-        <input type="text" class="search" placeholder="Search...">
-
+    
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-
+    
+        <input type="text" class="search" placeholder="Search...">
     </nav>
+
+    <section class="product-section">
+
+        <div class="product-card" data-name="Nike Sneakers">
+            <img src="nike sneakers.jpg" alt="Nike Sneakers">
+            <h3>Nike Sneakers</h3>
+            <p>Lightweight running sneakers with breathable material.</p>
+            <span class="price">$120</span>
+        </div>
+    
+        <div class="product-card" data-name="Apple AirPods">
+            <img src="airpods.jpg" alt="Apple AirPods">
+            <h3>Apple AirPods</h3>
+            <p>Wireless Bluetooth earphones with active noise cancellation.</p>
+            <span class="price">$250</span>
+        </div>
+    
+        <div class="product-card" data-name="Apple Watch">
+            <img src="apple watch.jpeg" alt="Apple Watch">
+            <h3>Apple Watch</h3>
+            <p>Fitness smartwatch with heart monitoring and GPS.</p>
+            <span class="price">$199</span>
+        </div>
+    
+        <div class="product-card" data-name="Dell Laptop">
+            <img src="dell laptop.jpg" alt="Dell Laptop">
+            <h3>Dell Laptop</h3>
+            <p>Powerful 15-inch laptop suitable for work and school.</p>
+            <span class="price">$899</span>
+        </div>
+    
+        <div class="product-card" data-name="Sony Headphones">
+            <img src="headphones.jpg" alt="Sony Headphones">
+            <h3 style="margin-top: 4rem;">Sony Headphones</h3>
+            <p>High-quality over-ear noise-cancelling headphones.</p>
+            <span class="price">$180</span>
+        </div>
+    
+    </section>
+    
+    <script>
+        // Add click event to each product card
+        const cards = document.querySelectorAll(".product-card");
+    
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                const name = card.getAttribute("data-name");
+                alert(name);
+            });
+        });
+    </script>
+    
 
 </body>
 </html>
